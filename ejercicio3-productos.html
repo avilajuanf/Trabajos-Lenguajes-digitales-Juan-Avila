@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 3 - Tarjetas de producto</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: system-ui, sans-serif;
+      background: #f6f6f6;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .product {
+      display: flex;
+      flex-direction: column;
+
+      border: 1px solid #ddd;
+      border-radius: 16px;
+      overflow: hidden;
+      background: white;
+    }
+
+    .image {
+      min-height: 160px;
+      background: #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+
+    .product-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 1rem;
+    }
+
+    .product-content h2 {
+      margin-top: 0;
+    }
+
+    .product-content p {
+      flex: 1;
+      color: #555;
+    }
+
+    .product-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0.5rem;
+    }
+
+    .product-footer strong {
+      font-size: 1.1rem;
+    }
+
+    .product-footer button {
+      padding: 0.5rem 1rem;
+      border: 0;
+      border-radius: 8px;
+      background: #1d4ed8;
+      color: white;
+      cursor: pointer;
+    }
+
+    .product-footer button:hover {
+      background: #1e40af;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="products">
+    <article class="product">
+      <div class="image">Imagen</div>
+      <div class="product-content">
+        <h2>Audífonos Pro</h2>
+        <p>Cancelación de ruido y batería de larga duración.</p>
+        <div class="product-footer">
+          <strong>$120</strong>
+          <button>Comprar</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product">
+      <div class="image">Imagen</div>
+      <div class="product-content">
+        <h2>Teclado Mecánico</h2>
+        <p>Switches suaves y retroiluminación.</p>
+        <div class="product-footer">
+          <strong>$85</strong>
+          <button>Comprar</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product">
+      <div class="image">Imagen</div>
+      <div class="product-content">
+        <h2>Mouse Gamer</h2>
+        <p>Alta precisión y diseño ergonómico.</p>
+        <div class="product-footer">
+          <strong>$45</strong>
+          <button>Comprar</button>
+        </div>
+      </div>
+    </article>
+  </section>
+
+</body>
+</html>

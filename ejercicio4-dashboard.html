@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 4 - Dashboard con Grid Areas</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+    }
+
+    .dashboard {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .header {
+      grid-area: header;
+      background: #1d4ed8;
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1rem;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: #334155;
+      padding: 0.6rem 0.8rem;
+      border-radius: 8px;
+    }
+
+    .sidebar a:hover {
+      background: #e2e8f0;
+      color: #1d4ed8;
+    }
+
+    .main {
+      grid-area: main;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .footer {
+      grid-area: footer;
+      background: #f1f5f9;
+      border-top: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 0.8rem 1.5rem;
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+    }
+
+    .stat {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .stat span {
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+
+    .stat strong {
+      font-size: 1.5rem;
+      color: #1e293b;
+    }
+
+    @media (max-width: 700px) {
+      .dashboard {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "header"
+          "sidebar"
+          "main"
+          "footer";
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="dashboard">
+    <header class="header">Panel administrativo</header>
+
+    <aside class="sidebar">
+      <a href="#">Resumen</a>
+      <a href="#">Usuarios</a>
+      <a href="#">Ventas</a>
+      <a href="#">Reportes</a>
+    </aside>
+
+    <main class="main">
+      <section class="stats">
+        <article class="stat">
+          <span>Usuarios</span>
+          <strong>1.250</strong>
+        </article>
+        <article class="stat">
+          <span>Ventas</span>
+          <strong>$8.400</strong>
+        </article>
+        <article class="stat">
+          <span>Cursos</span>
+          <strong>32</strong>
+        </article>
+        <article class="stat">
+          <span>Tickets</span>
+          <strong>14</strong>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">© 2026 DevSchool</footer>
+  </div>
+
+</body>
+</html>
