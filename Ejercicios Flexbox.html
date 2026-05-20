@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>24 Ejercicios de Flexbox</title>
+    <style>
+        /* Estilo básico de la página */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .ejercicio {
+            margin-bottom: 40px;
+        }
+
+        /* Estilos Caja*/
+        .caja {
+            display: flex; /* Esto activa flexbox en todas las cajas */
+            border: 2px solid black;
+            background-color: #f0f0f0;
+            height: 150px;
+            padding: 5px;
+        }
+
+        .cuadrado {
+            width: 40px;
+            height: 40px;
+            background-color: green;
+            border: 1px solid darkgreen;
+            margin: 2px;
+        }
+
+        /* Colores cuando hay varios cuadrados */
+        .amarillo { background-color: yellow; border-color: orange; }
+        .rojo { background-color: red; border-color: darkred; }
+
+        /* Niveles del 1 al 13 */
+        .nivel-1 { justify-content: flex-end; }
+        .nivel-2 { justify-content: center; }
+        .nivel-3 { justify-content: space-around; }
+        .nivel-4 { justify-content: space-between; }
+        .nivel-5 { align-items: flex-end; }
+        .nivel-6 { justify-content: center; align-items: center; }
+        .nivel-7 { justify-content: space-around; align-items: flex-end; }
+        .nivel-8 { flex-direction: row-reverse; }
+        .nivel-9 { flex-direction: column; }
+        .nivel-10 { flex-direction: row-reverse; justify-content: flex-end; }
+        .nivel-11 { flex-direction: column; justify-content: flex-end; }
+        .nivel-12 { flex-direction: column-reverse; justify-content: space-between; }
+        .nivel-13 { flex-direction: row-reverse; justify-content: center; align-items: flex-end; }
+        
+        /* Niveles 14 al 17*/
+        .orden-1 { order: 1; }
+        .orden-menos1 { order: -1; }
+        .alinear-final { align-self: flex-end; }
+
+        /* Niveles 18 al 24: Wrap */
+        .nivel-18 { flex-wrap: wrap; }
+        .nivel-19 { flex-direction: column; flex-wrap: wrap; }
+        .nivel-20 { flex-flow: column wrap; }
+        .nivel-21 { flex-wrap: wrap; align-content: flex-start; }
+        .nivel-22 { flex-wrap: wrap; align-content: flex-end; }
+        .nivel-23 { flex-direction: column-reverse; flex-wrap: wrap; align-content: center; }
+        .nivel-24 { flex-flow: column-reverse wrap-reverse; justify-content: center; align-content: space-between; }
+
+    </style>
+</head>
+<body>
+
+    <h1>Tarea: Práctica de Flexbox</h1>
+    <p>Aplicación de las propiedades vistas en Flexbox Froggy.</p>
+
+    /* Ejercicio 1 */
+    <div class="ejercicio">
+        <h3>Ejercicio 1</h3>
+        <p>Propiedad: <code>justify-content: flex-end;</code></p>
+        <div class="caja nivel-1">
+            <div class="cuadrado"></div>
+        </div>
+    </div>
+
+   /* Ejercicio 2 */
+    <div class="ejercicio">
+        <h3>Ejercicio 2</h3>
+        <p>Propiedad: <code>justify-content: center;</code></p>
+        <div class="caja nivel-2">
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+        </div>
+    </div>
+
+    /* Ejercicio 3 */>
+    <div class="ejercicio">
+        <h3>Ejercicio 3</h3>
+        <p>Propiedad: <code>justify-content: space-around;</code></p>
+        <div class="caja nivel-3">
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+        </div>
+    </div>
+
+    /* Ejercicio 4 */
+    <div class="ejercicio">
+        <h3>Ejercicio 4</h3>
+        <p>Propiedad: <code>justify-content: space-between;</code></p>
+        <div class="caja nivel-4">
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+        </div>
+    </div>
+
+    /* Ejercicio 5 */
+    <div class="ejercicio">
+        <h3>Ejercicio 5</h3>
+        <p>Propiedad: <code>align-items: flex-end;</code></p>
+        <div class="caja nivel-5">
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+        </div>
+    </div>
+
+    /* Ejercicio 6 */
+    <div class="ejercicio">
+        <h3>Ejercicio 6</h3>
+        <p>Propiedades: <code>justify-content: center; align-items: center;</code></p>
+        <div class="caja nivel-6">
+            <div class="cuadrado"></div>
+        </div>
+    </div>
+
+    /* Ejercicio 7 */
+    <div class="ejercicio">
+        <h3>Ejercicio 7</h3>
+        <p>Propiedades: <code>justify-content: space-around; align-items: flex-end;</code></p>
+        <div class="caja nivel-7">
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+        </div>
+    </div>
+
+    /* Ejercicio 8 */
+    <div class="ejercicio">
+        <h3>Ejercicio 8</h3>
+        <p>Propiedad: <code>flex-direction: row-reverse;</code></p>
+        <div class="caja nivel-8">
+            <div class="cuadrado"></div>
+            <div class="cuadrado amarillo"></div>
+            <div class="cuadrado rojo"></div>
+        </div>
+    </div>
+
+    /* Ejercicio 9 */
+    <div class="ejercicio">
+        <h3>Ejercicio 9</h3>
+        <p>Propiedad: <code>flex-direction: column;</code></p>
+        <div class="caja nivel-9">
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+        </div>
+    </div>
+
+    /* Ejercicio 10 */
+    <div class="ejercicio">
+        <h3>Ejercicio 10</h3>
+        <p>Propiedades: <code>flex-direction: row-reverse; justify-content: flex-end;</code></p>
+        <div class="caja nivel-10">
+            <div class="cuadrado"></div>
+            <div class="cuadrado amarillo"></div>
+        </div>
+    </div>
+
+    /* Ejercicio 11 */
+    <div class="ejercicio">
+        <h3>Ejercicio 11</h3>
+        <p>Propiedades: <code>flex-direction: column; justify-content: flex-end;</code></p>
+        <div class="caja nivel-11">
+            <div class="cuadrado"></div>
+            <div class="cuadrado"></div>
+        </div>
+    </div>
+
+    /* Ejercicio 12 */
+    <div class="ejercicio">
+        <h3>Ejercicio 12</h3>
+        <p>Propiedades: <code>flex-direction: column-reverse; justify-content: space-between;</code></p>
+        <div class="caja nivel-12">
+            <div class="cuadrado"></div>
+            <div class="cuadrado amarillo"></div>
+        </div>
+    </div>
+
+    /* Ejercicio 13 */
+    <div class="ejercicio">
+        <h3>Ejercicio 13</h3>
+        <p>Propiedades: <code>flex-direction: row-reverse; justify-content: center; align-items: flex-end;</code></p>
+        <div class="caja nivel-13">
+            <div class="cuadrado"></div>
+            <div class="cuadrado amarillo"></div>
+        </div>
+    </div>
+
+    /* Ejercicio 14 */
+    <div class="ejercicio">
+        <h3>Ejercicio 14</h3>
+        <p>Propiedad al ítem: <code>order: 1;</code></p>
+        <div class="caja">
+            <div class="cuadrado"></div>
+            <div class="cuadrado amarillo orden-1"></div>
+            <div class="cuadrado"></div>
+        </div>
+    </div>
+
+    /* Ejercicio 15 */
+    <div class="ejercicio">
+        <h3>Ejercicio 15</h3>
+        <p>Propiedad al ítem: <code>order: -1;</code></p>
+        <div class="caja">
+            <div class="cuadrado"></div>
+            <div class="cuadrado rojo orden-menos1"></div>
+            <div class="cuadrado"></div>
+        </div>
+    </div>
+
+    /* Ejercicio 16 */
+    <div class="ejercicio">
+        <h3>Ejercicio 16</h3>
+        <p>Propiedad al ítem: <code>align-self: flex-end;</code></p>
+        <div class="caja">
+            <div class="cuadrado"></div>
+            <div class="cuadrado amarillo alinear-final"></div>
+            <div class="cuadrado"></div>
+        </div>
+    </div>
+
+    /* Ejercicio 17 */
+    <div class="ejercicio">
+        <h3>Ejercicio 17</h3>
+        <p>Propiedades al ítem: <code>order: 1; align-self: flex-end;</code></p>
+        <div class="caja">
+            <div class="cuadrado"></div>
+            <div class="cuadrado amarillo orden-1 alinear-final"></div>
+            <div class="cuadrado"></div>
+        </div>
+    </div>
+
+    /* Ejercicio 18 */
+    <div class="ejercicio">
+        <h3>Ejercicio 18</h3>
+        <p>Propiedad: <code>flex-wrap: wrap;</code></p>
+        <div class="caja nivel-18">
+            <div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div>
+        </div>
+    </div>
+
+    /* Ejercicio 19 */>
+    <div class="ejercicio">
+        <h3>Ejercicio 19</h3>
+        <p>Propiedades: <code>flex-direction: column; flex-wrap: wrap;</code></p>
+        <div class="caja nivel-19">
+            <div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div>
+        </div>
+    </div>
+
+    /* Ejercicio 20 */
+    <div class="ejercicio">
+        <h3>Ejercicio 20</h3>
+        <p>Propiedad: <code>flex-flow: column wrap;</code></p>
+        <div class="caja nivel-20">
+            <div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div>
+        </div>
+    </div>
+
+    /* Ejercicio 21 */
+    <div class="ejercicio">
+        <h3>Ejercicio 21</h3>
+        <p>Propiedades: <code>flex-wrap: wrap; align-content: flex-start;</code></p>
+        <div class="caja nivel-21">
+            <div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div>
+        </div>
+    </div>
+
+    /* Ejercicio 22 */
+    <div class="ejercicio">
+        <h3>Ejercicio 22</h3>
+        <p>Propiedades: <code>flex-wrap: wrap; align-content: flex-end;</code></p>
+        <div class="caja nivel-22">
+            <div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div>
+        </div>
+    </div>
+
+    /* Ejercicio 23 */
+    <div class="ejercicio">
+        <h3>Ejercicio 23</h3>
+        <p>Propiedades: <code>flex-direction: column-reverse; flex-wrap: wrap; align-content: center;</code></p>
+        <div class="caja nivel-23">
+            <div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div><div class="cuadrado"></div>
+        </div>
+    </div>
+
+    /* Ejercicio 24 */
+    <div class="ejercicio">
+        <h3>Ejercicio 24</h3>
+        <p>Propiedades: <code>flex-flow: column-reverse wrap-reverse; justify-content: center; align-content: space-between;</code></p>
+        <div class="caja nivel-24">
+            <div class="cuadrado"></div><div class="cuadrado amarillo"></div><div class="cuadrado rojo"></div>
+            <div class="cuadrado"></div><div class="cuadrado amarillo"></div><div class="cuadrado rojo"></div>
+            <div class="cuadrado"></div><div class="cuadrado amarillo"></div><div class="cuadrado rojo"></div>
+        </div>
+    </div>
+
+</body>
+</html>
